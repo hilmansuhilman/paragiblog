@@ -7,20 +7,16 @@ class Remap extends CI_Controller{
         echo 'Saya dari segement 2';
         
     }
-    
-    function testtext(){
-        
-    }
-    
+
     function bantuan(){
-        $this->load->helper('text');
+        
         $data = 'Ini Adalah Contoh MENGAPA?';
-        $hapus = preg_replace('/[^\da-z ]/i', '', $data);
-        $replace = str_replace(" ", "-", $hapus);
-        $kecil = strtolower($replace);        
+        $hapus = preg_replace('/[^\da-z ]/i', '', $data); // Ieu paraqgi ng hapus spesial karakter terkecuali spasi
+        $replace = str_replace(" ", "-", $hapus); // Ieu paragi ngaganti spasi jadi strip
+        $kecil = strtolower($replace); // Ieu mah paragi ng leutikan huruf
         echo $kecil;
     }
-    public function _remap(){
+    public function _remap(){ // Fungsi ieu penting pisan kudu di pake unggal nyieunweb
         
         $data = $this->uri->segment(2);
         
